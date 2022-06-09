@@ -7,8 +7,8 @@ const data_arr = db.db;
 function App() {
   return (
     <div className="App">
-      {data_arr.map((item) => (
-        <Images img_url={item[2]} title={item[1]} name={item[0]} />
+      {data_arr.map((item, i) => (
+        <Images index={i} img_url={item[2]} title={item[1]} name={item[0]} />
       ))}
     </div>
   );

@@ -4,6 +4,7 @@ export default function Images(props) {
   return (
     <div>
       <div className="item-wrapper">
+        <p>{props.index + 1}</p>
         <p>{props.name}</p>
         <p>{props.title}</p>
         <div className="img-wrapper">
