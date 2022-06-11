@@ -3,6 +3,11 @@ import { useState } from "react";
 
 export default function Images(props) {
   const [status, setStatus] = useState("ok");
+
+  function onclick() {
+    status === "ok" ? setStatus("corregir") : setStatus("ok");
+    props.childToParent(props.name);
+  }
   return (
     <div>
       <div className="item-wrapper">
@@ -12,13 +17,7 @@ export default function Images(props) {
         <div className="img-wrapper">
           <img src={props.img_url} alt={props.name} />
         </div>
-        <button
-          onClick={() =>
-            status === "ok" ? setStatus("corregir") : setStatus("ok")
-          }
-        >
-          Verificar
-        </button>
+        <button onClick={() => onclick()}>Verificar</button>
       </div>
     </div>
   );
