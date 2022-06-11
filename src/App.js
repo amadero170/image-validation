@@ -30,12 +30,11 @@ let arr = [];
 
 function App() {
   const [data, setData] = useState("");
+  arr.push(`${data}, `);
 
-  const childToParent = (childdata) => {
+  const changeImage = (childdata) => {
     setData(childdata);
-    arr.push(`${childdata},`);
   };
-
   return (
     <div className="App">
       <p>{arr}</p>
@@ -46,7 +45,7 @@ function App() {
           img_url={item[2]}
           title={item[1]}
           name={item[0]}
-          childToParent={childToParent}
+          changeImage={changeImage}
         />
       ))}
     </div>
